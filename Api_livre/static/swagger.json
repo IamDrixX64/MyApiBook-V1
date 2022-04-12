@@ -1,0 +1,81 @@
+{
+    "openapi":"1.0.0",
+    "info": {
+        "description":"DrixX",
+        "title":"myapibook",
+        "contact": {
+            "email": "drixxnoname@gmail.com"
+        },				
+        "licence":{
+            "name":"MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        } 
+    },
+    "servers":[
+        {
+            "url":"https://myapibook.herokuapp.com/"
+        }
+    ],
+    "tags": [
+        {
+            "name":"myapibook",
+            "des": "exe"
+        }
+    ],
+    "paths": {
+        "/categories": {
+            "get": {
+                "tags": [
+                    "categories request"
+                ],
+                "summary": "Retourne la liste des livres",
+                "reponse": {
+                    "200": {
+                        "schema": {
+                            "$ref":"#/components/schemas/bookRequestPostBody"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas":{
+            "uuid": {
+                "type": "string"
+            },
+            "bookRequestPostBody": {
+                "type": "object",
+                "properties":{
+                    "title": {
+                        "type":"string",
+                        "format":"string"
+                    },
+                    "email": {
+                        "type":"string",
+                        "format":"string"
+                    }
+                },
+                "bookRequest": {
+                    "type":"object",
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "format": "UUID"
+                        },
+                        "title": {
+                            "type": "string",
+                            "format": "UUID"
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "UUID"
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
